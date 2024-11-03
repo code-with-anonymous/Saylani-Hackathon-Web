@@ -1,0 +1,55 @@
+.contactForm {
+    padding: 100px 20px; /* Add horizontal padding for smaller screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.contactForm p {
+    padding-right: 50px; 
+}
+
+.btn4 {
+    color: #fff;
+    background-color: #ff4d4d; /* Red color */
+    font-weight: 600;
+    padding: 14px 41px;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Include transform for scaling */
+}
+
+.btn4:hover {
+    background-color: #e60000; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+@media (max-width: 576px) {
+    .contactform {
+        padding: 0 20px;
+    }
+    .contactForm {
+        padding: 50px 20px; /* Adjust padding for smaller screens */
+    }
+    .contactForm h1 {
+        text-align: center;
+    }
+    .contactForm p {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .btn-container {
+        display: flex;
+        justify-content: center; /* Center the button horizontally */
+        margin-top: 20px; /* Add some margin for spacing */
+    }
+    h2 {
+        padding: 0 10px;
+    }
+    iframe {
+        padding: 0 10px;
+    }
+}

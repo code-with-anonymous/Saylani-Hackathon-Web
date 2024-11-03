@@ -1,0 +1,19 @@
+.imgSlider h1{
+    text-align: center;
+    font-family: playfair-display;
+    font-size: 46px;
+}
+
+.imgSlider p{ 
+    text-align: center;
+    font-size: 16px;
+    color: #767676;
+    padding: 0px 370px;
+}
+
+@media (max-width: 576px){ 
+    .imgSlider p{  
+        padding: 0px 0px;
+    }
+  }
+  

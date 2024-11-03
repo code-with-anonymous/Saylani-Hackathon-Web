@@ -1,0 +1,257 @@
+
+@import '~bootstrap/scss/bootstrap';
+
+.home-page {
+  position: relative;
+
+  .hero-section, .why-choose-us {
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4); // Dark overlay
+      z-index: 1;
+    }
+
+    * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .header {
+      position: relative; /* Ensure this is set for the logo positioning to work */
+    }
+
+    /* Styling for the hero section to position the logo */
+.hero-section {
+  display: flex;                 /* Use flexbox for centering the logo */
+  flex-direction: column;        /* Arrange children in a column */
+  justify-content: center;       /* Center content vertically */
+  align-items: center;           /* Center content horizontally */
+  position: relative;            /* Relative positioning to contain the logo */
+  min-height: 100vh;             /* Make sure the hero section takes the full height of the viewport */
+  background-size: cover;        /* Ensure the background covers the entire section */
+  background-position: center;   /* Center the background image */
+}
+
+/* Styling for the logo */
+.logo {
+  max-width: 250px;
+  transition: max-width 0.3s ease, transform 0.3s ease;
+  margin: 10px; /* Add margin for spacing */
+
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 150px;
+    transform: scale(0.8); /* Optional: scale down slightly for very small screens */
+  }
+
+  @media (max-width: 476px) {
+    max-width: 120px;
+    transform: scale(0.7); /* Further scale down for very small screens */
+  }
+
+  @media (max-width: 405px) {
+    max-width: 100px;
+    transform: scale(0.6); /* Further scale down for extremely small screens */
+  }
+}
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .email-signup {
+      margin-top: 20px;
+    }
+
+    .trial-button {
+      background-color: #1f5306;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e65500;
+      }
+    }
+
+    .small-text {
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  }
+
+  .our-services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .services-container {
+      @include media-breakpoint-up(md) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+      }
+
+      @include media-breakpoint-down(md) {
+        display: block; // Stack services vertically on smaller screens
+      }
+    }
+
+    .service-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: left;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%; // Full width on small screens
+        margin-bottom: 20px; // Spacing between cards
+      }
+    }
+  }
+
+  .why-choose-us {
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .reasons-container {
+      @include media-breakpoint-up(md) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+      }
+
+      @include media-breakpoint-down(md) {
+        display: block; // Stack reasons vertically on smaller screens
+      }
+    }
+
+    .reason-card {
+      width: 23%;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #fff;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%; // Full width on small screens
+        margin-bottom: 20px; // Spacing between cards
+      }
+    }
+  }
+
+  .faqs {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &.open .faq-answer {
+        display: block;
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          font-size: 1.2rem;
+          margin: 0;
+        }
+
+        .faq-toggle {
+          background-color: transparent;
+          border: none;
+          font-size: 1.5rem;
+          color: #333;
+        }
+      }
+
+      .faq-answer {
+        display: none;
+        padding-top: 10px;
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+  }
+}

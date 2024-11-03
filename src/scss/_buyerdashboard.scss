@@ -1,0 +1,32 @@
+// _buyerdashboard.scss
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-right: 16px;
+}
+
+.order-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.order-total {
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #ff4d4f;
+}
+ 
+@media (max-width: 768px) {
+  .order-item-image {
+    width: 80px;
+    height: 80px;
+  }
+}

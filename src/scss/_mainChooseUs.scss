@@ -1,0 +1,70 @@
+.why-shop-with-us {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .why-shop-with-us h2 {
+    font-size: 2.5em; /* Increased font size */
+    font-weight: bold;
+  }
+  
+  .underline {
+    width: 100px; /* Slightly wider underline */
+    height: 4px;
+    background-color: #f74c57;
+    margin: 0.5em auto 2em auto;
+    margin-bottom: 50px;
+  }
+  
+  .benefits {
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping on smaller screens */
+    justify-content: center;
+    gap: 2.3em;
+  }
+  
+  .benefit-card {
+    background-color: #F44336;
+    color: #fff;
+    border-radius: 12px;
+    width: 350px; /* Increased width */
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    transition: transform 0.2s;
+    
+  }
+  
+  .benefit-card:hover {
+    transform: scale(1.05); /* Small hover effect */
+  }
+  
+  .icon {
+    font-size: 3em; /* Increased icon size */
+    margin-bottom: 0.5em;
+  }
+  
+  .benefit-card h3 {
+    font-size: 1.75em; /* Increased font size for title */
+    margin: 0.5em 0;
+  }
+  
+  .benefit-card p {
+    font-size: 1.1em; /* Slightly larger font for description */
+    color: #d4d4d4;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .benefit-card {
+      width: 100%; /* Full width on smaller screens */
+    }
+    
+    .benefits {
+      gap: 1em;
+    }
+  
+    .why-shop-with-us h2 {
+      font-size: 2em; /* Adjusted title size for mobile */
+    }
+  }
+  

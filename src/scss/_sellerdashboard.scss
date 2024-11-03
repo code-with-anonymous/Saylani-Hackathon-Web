@@ -1,0 +1,28 @@
+// Basic styling
+.site-layout-content {
+    padding: 24px;
+    min-height: 280px;
+  }
+  
+  // Responsive design
+  @media (max-width: 768px) {
+    .product-card {
+      margin-bottom: 20px;
+    }
+  
+    .navbar {
+      .navbar-nav {
+        display: block;
+        .nav-item {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .site-layout-content {
+      padding: 16px;
+    }
+  }
+  

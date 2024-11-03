@@ -1,0 +1,53 @@
+.sectionStyless { 
+    background-image: url('../images/slide3.jpeg');
+    // background-image: url('http://lenos.mbkip3ms9u-e92498n216kr.p.temp-site.link/wp-content/uploads/2022/03/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 500px;  
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; // Text color
+    text-align: center; 
+  }
+.sectionStyless h1{
+    font-family: playfair-display;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}  
+.sectionStyless h5{
+    font-size: 24px;
+    color: red;
+    margin-bottom: 20px;
+}  
+.btn3{ 
+    background-color: #000;
+    font-weight: 600;
+    color: #fff;
+    padding: 14px 41px;
+    border: none;
+    border-radius: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}  
+.btn3:hover {
+    background-color: red;
+    color: #fff; 
+}
+
+@media (max-width: 576px){
+    .sectionStyless h5{
+        font-size: 18px;
+    }
+    .sectionStyless h1{
+        font-family: playfair-display;
+        font-size: 40px;
+        margin-bottom: 30px;
+    }  
+    .mission{
+        margin-bottom: 25px;
+    } 
+  }

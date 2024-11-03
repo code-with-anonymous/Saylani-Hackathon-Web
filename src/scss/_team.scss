@@ -1,0 +1,27 @@
+.team{
+    padding: 50px 0px;
+}
+.team p{
+    color: #767676;
+}
+.team-member img{
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+}
+.team-member h4{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.team-member p{
+    color: #767676;
+}
+
+@media (max-width: 576px){
+    .team{
+        padding: 0px;
+    }
+   
+  }

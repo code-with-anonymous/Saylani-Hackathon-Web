@@ -1,0 +1,59 @@
+
+
+.sectionStyle { 
+    background-image: url('../images/shop.webp');
+    background-size: cover;
+    background-position: center;
+    height: 300px;  
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; // Text color
+    text-align: center; 
+}
+.sectionStyles { 
+  background-image: url('../images/img-11.jpg');
+  background-size: cover; /* Changed to cover to ensure full width scaling */
+  background-position: center;
+
+  height: 400px;  
+  width: 100vw; /* Ensures full viewport width */
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Text color */
+  text-align: center;
+  overflow: hidden; /* Optional: Hides any overflow if image goes beyond screen */
+}
+
+  .carousel-caption-center {
+    position: absolute; // Positioning for centered caption
+    top: 50%; // Center vertically
+    left: 50%; // Center horizontally
+    width: 100%;
+    transform: translate(-50%, -50%); // Adjust for true center
+}
+
+
+@media (max-width: 576px){
+  .carousel-control-prev,
+    .carousel-control-next {
+        display: none; // Hide controls on mobile
+    }
+  #des {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .sectionStyles {
+    height: 200px; // Adjust height for smaller screens
+  }
+  .carousels h1 {
+    font-size: 35px;
+  }
+  .carousels p {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

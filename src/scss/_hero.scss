@@ -1,0 +1,31 @@
+.carousel-caption-center {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.carousel-caption-center h1 {
+  font-size: 4rem; 
+  font-weight: bold;
+}
+
+.carousel-caption-center p {
+  font-size: 1.2rem;  
+}
+.carousel-caption-center button { 
+  padding: 14px 26px; 
+  background-color: #ef233c; 
+}
+
+#des {
+  font-weight: bold;
+  font-size: 1.5rem; 
+  color: #ef233c; 
+}

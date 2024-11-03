@@ -1,0 +1,11 @@
+.nav-link {
+    font-size: 1.2rem; /* Adjust the size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: black; /* Default color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: red; /* Change color on hover and active */
+}

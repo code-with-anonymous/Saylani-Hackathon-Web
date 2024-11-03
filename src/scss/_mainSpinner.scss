@@ -1,0 +1,60 @@
+.spinner-overlay {
+    position: fixed; /* Make the overlay cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* High z-index to appear above other content */
+  }
+  
+  .lds-ring,
+  .lds-ring div {
+    box-sizing: border-box;
+  }
+  
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px; /* Spinner width */
+    height: 80px; /* Spinner height */
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px; /* Inner div width */
+    height: 64px; /* Inner div height */
+    margin: 8px; /* Margin around the inner div */
+    border: 8px solid currentColor; /* Border width and color */
+    border-radius: 50%; /* Circular shape */
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: currentColor transparent transparent transparent;
+  }
+  
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s; /* Animation delay for the first div */
+  }
+  
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s; /* Animation delay for the second div */
+  }
+  
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s; /* Animation delay for the third div */
+  }
+  
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg); /* Initial state */
+    }
+    100% {
+      transform: rotate(360deg); /* Final state */
+    }
+  }
+  
