@@ -1,0 +1,30 @@
+.table-container {
+    overflow-x: auto; // Allows horizontal scrolling for narrow screens
+    -webkit-overflow-scrolling: touch; // Enables smooth scrolling on mobile devices
+    width: 100%; // Ensures the container takes up full width
+  }
+  
+  .table {
+    width: 100%;
+    min-width: 800px; // Ensures the table does not collapse below this width
+    border-collapse: collapse;
+  
+    th,
+    td {
+      text-align: center;
+      white-space: nowrap; // Prevents text wrapping
+      padding: 8px 12px; // Adds padding for better readability
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .table-container {
+      padding: 0 5px; // Prevents table from touching the screen edges
+    }
+  
+    .table {
+      font-size: 12px; // Reduces font size for better visibility on small screens
+      min-width: 600px; // Adjust the table's minimum width to fit narrow screens
+    }
+  }
+  

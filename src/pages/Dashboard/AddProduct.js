@@ -75,9 +75,10 @@ const AddProduct = () => {
               onChange={(value) => setProduct({ ...product, category: value })}
               placeholder="Select a category"
             >
-              <Option value="appetizer">Appetizer</Option>
-              <Option value="main_course">Main Course</Option>
-              <Option value="desserts">Desserts</Option>
+              <Option value="appetizer">Burger</Option>
+              <Option value="main_course">Pizza</Option>
+              <Option value="desserts">Pasta</Option>
+              <Option value="desserts">Barbecue</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Description" name="description" required>

@@ -1,13 +1,12 @@
 @import "./scss/hero";
 @import "./scss/ExampleCarouselImage";
-@import "./scss/popularProducts";
+@import "./scss/MenuProducts";
 @import "./scss/imageSlider";
 @import "./scss/footer";
 @import "./scss/.hero";
 @import "./scss/team";
 @import "./scss/contactForm";
 @import "./scss/navbar";
-@import "./scss/.mainHeroSection";
 @import "./scss/mainChooseUs";
 @import "./scss/mainSection1";
 @import "./scss/mainTestimonial";
@@ -20,6 +19,11 @@
 @import "./scss/registerpage";
 @import "./scss/Section5";
 @import "./scss/navbar";
+@import "./scss/Main_testi";
+@import "./scss/cart";
+@import "./scss/about";
+@import "./scss/singleProduct";
+@import "./scss/buyerOrder";
 
 /* Ensures root div takes 100vh and applies flex layout to center content */
 #root {
@@ -41,9 +45,13 @@ a {
 .App {
   text-align: center;
 }
+
 .image img {
-  height: 600px; 
+  max-height: 600px;
+  width: 100%;
+  object-fit: cover;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -103,3 +111,77 @@ body{
     transform: rotate(360deg);
   }
 }
+.menu-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.product-card {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: transform 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .product-info {
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+
+  .price {
+    color: #888;
+  }
+
+  .button-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+
+    button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+
+      &.add-to-cart {
+        background-color: #e63946;
+      }
+
+      &.buy-now {
+        background-color: #333;
+      }
+    }
+  }
+
+  &:hover .button-overlay {
+    opacity: 1;
+  }
+}
+
+
+

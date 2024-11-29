@@ -38,7 +38,7 @@ const ContactForm = () => {
           </p>
           <form onSubmit={handleSubmit} className="contactform">
             <div className="row">
-              <div className="form-group col-md-6 mb-3">
+              <div className="form-group col-md-12 mb-3 me-1">
                 <input
                   type="text"
                   name="name"
@@ -49,7 +49,7 @@ const ContactForm = () => {
                   required
                 />
               </div>
-              <div className="form-group col-md-6">
+              <div className="form-group col-md-12 mb-3 ">
                 <input
                   type="email"
                   name="email"

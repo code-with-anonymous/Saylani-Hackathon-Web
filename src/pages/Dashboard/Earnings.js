@@ -20,7 +20,11 @@ const Earnings = () => {
           where("sellerUid", "==", currentUser.uid)
         );
         const orderSnapshot = await getDocs(q);
-        const totalEarnings = orderSnapshot.docs.reduce((acc, doc) => acc + (doc.data().price || 0), 0);
+
+        // Use `parseFloat` and ensure each price is a valid number
+        const totalEarnings = orderSnapshot.docs.reduce((acc, doc) => 
+          acc + parseFloat(doc.data().price || 0), 0
+        );
 
         const calculatedGST = totalEarnings * 0.15;
         const calculatedAppTax = totalEarnings * 0.05;
@@ -40,7 +44,7 @@ const Earnings = () => {
   }, [currentUser]);
 
   const handlePrint = () => {
-    window.print(); // Trigger the print dialog
+    window.print(); 
   };
 
   return (
@@ -49,27 +53,27 @@ const Earnings = () => {
         <Row gutter={16} style={{ marginBottom: '16px' }}>
           <Col span={12}>
             <div style={{ color: "rgba(0, 0, 0, 0.65)", fontSize: '1.2rem' }}>Total Earnings:</div>
-            <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>${Number(earnings).toFixed(2)}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>${earnings.toFixed(2)}</div>
           </Col>
         </Row>
         <Row gutter={16}>
           <Col span={12}>
             <div>Total GST (15%):</div>
-            <div style={{ color: "red", fontWeight: 'bold' }}>${Number(gst).toFixed(2)}</div>
+            <div style={{ color: "red", fontWeight: 'bold' }}>${gst.toFixed(2)}</div>
           </Col>
           <Col span={12}>
             <div>Total App Tax (5%):</div>
-            <div style={{ color: "orange", fontWeight: 'bold' }}>${Number(appTax).toFixed(2)}</div>
+            <div style={{ color: "orange", fontWeight: 'bold' }}>${appTax.toFixed(2)}</div>
           </Col>
         </Row>
         <Row gutter={16}>
           <Col span={12}>
             <div>Total Deductions:</div>
-            <div style={{ color: "blue", fontWeight: 'bold' }}>${Number(totalDeductions).toFixed(2)}</div>
+            <div style={{ color: "blue", fontWeight: 'bold' }}>${totalDeductions.toFixed(2)}</div>
           </Col>
           <Col span={12}>
             <div style={{ fontWeight: "bold" }}>Net Earnings:</div>
-            <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>${Number(netEarnings).toFixed(2)}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>${netEarnings.toFixed(2)}</div>
           </Col>
         </Row>
         <div style={{ marginTop: "1rem", color: "red", fontSize: "0.85rem", fontStyle: 'italic' }}>

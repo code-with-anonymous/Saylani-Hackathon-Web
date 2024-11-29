@@ -1,58 +1,58 @@
 import React from "react"; 
 import { Link } from "react-router-dom";
 import img1 from "../../images/img1.avif";
-import img2 from "../../images/img6.avif";
-import img3 from "../../images/img-2.webp";
-import img4 from "../../images/slide3.jpeg";
+import img2 from "../../images/mixed-pizza-with-sliced-lemon.avif";
+import img3 from "../../images/pasta.jpeg";
+import img4 from "../../images/chicken-skewers-hero.jpg";
 
 const FeaturedProducts = ({ addToCart }) => {  
   return (
     <main className="text-center mb-5">
-      <h1 className="text-dark mb-5 mt-5">Featured Products</h1>
+      <h1 className="text-dark mb-5 mt-5 fw-bold ">Featured Categories</h1>
       <div className="container">
         <div className="row text-center">
           <div className="col-lg-3 col-md-6 mb-4"> {/* Adjusted to allow better responsiveness */}
             <img
               src={img1}
               alt="Clothes"
-              style={{ height: "200px", width: "100%", objectFit: "cover" }}
+              style={{ height: "200px", width: "90%", objectFit: "cover" }}
             />
-            <h5 className="text-dark mt-3">Clothes</h5>
+            <h5 className="text-dark mt-3">Burgers</h5>
           </div>
 
           <div className="col-lg-3 col-md-6 mb-4">
             <img
               src={img2}
-              alt="Shoes"
-              style={{ height: "200px", width: "100%", objectFit: "cover" }}
+              alt="Pizza"
+              style={{ height: "200px", width: "90%", objectFit: "cover" }}
             />
-            <h5 className="text-dark mt-3">Shoes</h5>
+            <h5 className="text-dark mt-3">Pizza</h5>
           </div>
 
           <div className="col-lg-3 col-md-6 mb-4">
             <img
               src={img3}
-              alt="Grooming"
-              style={{ height: "200px", width: "100%", objectFit: "cover" }}
+              alt="Pasta"
+              style={{ height: "200px", width: "90%", objectFit: "cover" }}
             />
-            <h5 className="text-dark mt-3">Grooming</h5>
+            <h5 className="text-dark mt-3">Pasta</h5>
           </div>
 
           <div className="col-lg-3 col-md-6 mb-4">
             <img
               src={img4}
-              alt="Accessories"
-              style={{ height: "200px", width: "100%", objectFit: "cover" }}
+              alt="Barbecue"
+              style={{ height: "200px", width: "80%", objectFit: "cover" }}
             />
-            <h5 className="text-dark mt-3">Accessories</h5>
+            <h5 className="text-dark mt-3">Barbecue</h5>
           </div>
         </div>
       </div>
-      <div className="button">
-        <Link to="#">
+      {/* <div className="button">
+        <Link to="/shop">
           <button className="btn btn-danger">View More</button>
         </Link>
-      </div>
+      </div> */}
     </main>
   );
 };

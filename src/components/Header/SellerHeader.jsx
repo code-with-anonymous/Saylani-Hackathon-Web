@@ -42,7 +42,7 @@ const SellerHeader = () => {
         <Navbar bg="light" expand="lg" className="p-3">
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                <img src="https://themewagon.github.io/famms/images/logo.png" alt="" width="230px" height="40px"/>
+                <img src="https://themewagon.github.io/famms/images/logo.png" alt="" width="190px" height="40px"/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">

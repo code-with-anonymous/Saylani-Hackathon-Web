@@ -16,7 +16,7 @@ const Hero = () => {
 
       <Breadcrumb>
         <Breadcrumb.Item as={Link} to="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item active style={{ color: 'red' }}>/ Contact</Breadcrumb.Item>
+        <Breadcrumb.Item active style={{ color: 'white' }}>Contact</Breadcrumb.Item>
       </Breadcrumb>
     </div>
   );

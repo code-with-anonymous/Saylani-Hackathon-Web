@@ -1,7 +1,7 @@
 
 
 .sectionStyle { 
-    background-image: url('../images/shop.webp');
+    background-image: url('../images/slide3.jpeg');
     background-size: cover;
     background-position: center;
     height: 300px;  
@@ -56,4 +56,10 @@
     font-size: 14px;
     font-weight: bold;
   }
+  .main-img{
+    height: 400px;
+  }
+}
+.hero-img{
+  object-fit: cover;
 }

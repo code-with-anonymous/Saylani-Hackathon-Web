@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import group from "../../images/Group-2 (1).png"
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -20,11 +21,9 @@ const Footer = () => {
                   alt="Logo"
                 />
                 <p className="mt-4">
-                  famms brings you timeless watches crafted for elegance and
-                  precision. Discover quality timepieces and shop confidently
-                  with our excellent service.
+                Our fast food restaurant serves quick, delicious meals like juicy burgers, crispy fries, and refreshing drinks. Enjoy high-quality food with fast, friendly service in a convenient and welcoming atmosphere.
                 </p>
-                <div className="text-start social-icon">
+                {/* <div className="text-start social-icon">
                   <Link
                     to="https://www.facebook.com"
                     target="_blank"
@@ -46,7 +45,7 @@ const Footer = () => {
                   >
                     <FaInstagram className="social-icon" />
                   </Link>
-                </div>
+                </div> */}
               </div>
 
               <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -61,22 +60,22 @@ const Footer = () => {
                 />
                 <p>
                   <Link to="#" className="text-dark">
-                    Smart Watches
+                    Burgers
                   </Link>
                 </p>
                 <p>
                   <Link to="#" className="text-dark">
-                    Stop Watch
+                  Pizza
                   </Link>
                 </p>
                 <p>
                   <Link to="#" className="text-dark">
-                    Wall Clock
+                    Pasta
                   </Link>
                 </p>
                 <p>
                   <Link to="#" className="text-dark">
-                    Alarm Clock
+                   Barbecue
                   </Link>
                 </p>
               </div>
@@ -91,7 +90,7 @@ const Footer = () => {
                   }}
                 />
                 <p>
-                  <Link to="/#" className="text-dark">
+                  <Link to="/shop" className="text-dark">
                     Shop
                   </Link>
                 </p>
@@ -106,8 +105,8 @@ const Footer = () => {
                   </Link>
                 </p>
                 <p>
-                  <Link to="/#" className="text-dark">
-                    Help
+                  <Link to="/orders" className="text-dark">
+                    Orders
                   </Link>
                 </p>
               </div>
@@ -123,13 +122,13 @@ const Footer = () => {
                 />
                 <p>
                   <Link to="tel:3075501821" className="text-dark">
-                    +307 550 6821
+                    +309 715 8756
                   </Link>
                 </p>
                 <p className="mt-2">283 N. Glenwood Street, Levittown, NY</p>
                 <p className="text-dark">
-                  <Link to="mailto:muneeb.dev@gmail.com" className="text-dark">
-                    muneeb.dev@gmail.com
+                  <Link to="mailto: mrrayyan200@gmail.com" className="text-dark">
+                    mrrayyan200@gmail.com
                   </Link>
                 </p>
               </div>
@@ -140,13 +139,14 @@ const Footer = () => {
           className="row text-center p-3 foot2"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
         >
-          <div className="col-md-6 text-white">
-            Copyright © {year}. All Rights Reserved.
+          <div className=" col-lg-12 col-md-6 text-white text-center">
+            <p>Copyright © {year}. All Rights Reserved.</p>
           </div>
-          <div className="col-md-6 img">
+          <div className="col-md-6 col-lg-12 img text-center">
             <img
-              src="http://lenos.mbkip3ms9u-e92498n216kr.p.temp-site.link/wp-content/uploads/2022/03/Group-2.png"
-              alt=""
+              src={group}
+              alt="group"
+              className="text-center"
             />
           </div>
         </div>

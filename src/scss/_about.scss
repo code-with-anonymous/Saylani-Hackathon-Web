@@ -1,0 +1,36 @@
+.container {
+    max-width: 100%; /* Ensure the container does not overflow */
+    padding: 0 15px; /* Add padding to prevent overflow on small screens */
+  }
+  
+  .team-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows items to wrap and avoid horizontal overflow */
+  }
+  
+  .team-member {
+    text-align: center;
+    flex: 1 1 250px; /* Flex-grow, flex-shrink, and base width to ensure responsive sizing */
+    max-width: 100%;
+  }
+  
+  .team-member img {
+    width: 100%;
+    max-width: 250px; /* Limit the image width to 250px */
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .team-row {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center;
+    }
+  
+    .team-member {
+      margin-bottom: 20px; /* Add spacing between items in vertical layout */
+    }
+  }
+  

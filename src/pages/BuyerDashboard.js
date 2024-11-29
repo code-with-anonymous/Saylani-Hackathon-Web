@@ -187,85 +187,102 @@ const BuyerDashboard = () => {
 
   const renderProductList = () => (
     <div className="container mt-4">
-      <div className="row mb-4">
-        <div className="col-12">
-          <Input
-            placeholder="Search products"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="mb-3"
-          />
-          <Select
-            placeholder="Select category"
-            onChange={setSelectedCategory}
-            className="mb-3"
-            style={{ width: '100%' }}
-          >
-            <Select.Option value="">All Categories</Select.Option>
-            {categories.map(category => (
-              <Select.Option key={category} value={category}>{category}</Select.Option>
-            ))}
-          </Select>
-        </div>
-      </div>
-
-      <Spin size="large" tip="Fetching Products" spinning={isSpin}>
-        <div className="row">
-          {filteredProducts.slice(0, 12).map((product) => (
-            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={product.id}>
-              <Card
-                hoverable
-                cover={product.image ? (
-                  <Link to={`/singleProduct/${product.id}`}>
-                    <img
-                      alt={product.name}
-                      src={product.image}
-                      className="card-img-top"
-                      style={{ height: '200px', objectFit: 'cover' }}
-                    />
-                  </Link>
-                ) : null}
-                actions={[
-                  <Button
-                    type="primary"
-                    onClick={() => handleAddToCart(product)}
-                    style={{ width: '80%', borderColor: 'green', margin: '0' }}
-                  >
-                    <FaCartPlus /> Cart
-                  </Button>,
-                  <Button
-                    type="default"
-                    onClick={() => handleOrderModalOpen(product)}
-                    style={{ width: '80%', margin: '0', marginRight: "8px" }}
-                  >
-                    Order
-                  </Button>,
-                  <Button
-                    type="default"
-                    onClick={() => handleAddToWishlist(product)}
-                    style={{ width: '80%', margin: '0' }}
-                  >
-                    <FaRegHeart /> Wishlist
-                  </Button>
-                ]}
-                style={{
-                  height: '100%',
-                  padding: '16px',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <Card.Meta title={product.name} description={`${product.description.substring(0, 120)}...`} />
-                <p className="product-price" style={{ fontSize: '18px', fontWeight: 'bold', marginTop: '8px' }}>${product.price}</p>
-              </Card>
-            </div>
+  <div className="row mb-4">
+    <div className="col-lg-12">
+      <div className="search-inputs">
+        <Input
+          placeholder="Search products"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="mb-2 p-2"
+          style={{ width: '100%' }}
+        />
+        <Select
+          placeholder="Select category"
+          onChange={setSelectedCategory}
+          className="mb-3 "
+          style={{ width: '100%' }}
+        >
+          <Select.Option value="">All Categories</Select.Option>
+          {categories.map((category) => (
+            <Select.Option key={category} value={category}>
+              {category}
+            </Select.Option>
           ))}
-        </div>
-      </Spin>
+        </Select>
+      </div>
     </div>
+  </div>
+
+  <Spin size="large" tip="Fetching Products" spinning={isSpin}>
+    <div className="row">
+      {filteredProducts.slice(0, 12).map((product) => (
+        <div className="col-lg-4 col-md-6 col-sm-12 mb-4" key={product.id}>
+          <Card
+            className="mx-2"
+            hoverable
+            cover={
+              product.image ? (
+                <Link to={`/singleProduct/${product.id}`}>
+                  <img
+                    alt={product.name}
+                    src={product.image}
+                    className="card-img-top"
+                    style={{ height: '200px', objectFit: 'cover' }}
+                  />
+                </Link>
+              ) : null
+            }
+            actions={[
+              <Button
+                type="primary"
+                onClick={() => handleAddToCart(product)}
+                style={{ width: '80%', borderColor: 'green', margin: '0' }}
+              >
+                <FaCartPlus /> Cart
+              </Button>,
+              <Button
+                type="default"
+                onClick={() => handleOrderModalOpen(product)}
+                style={{ width: '80%', margin: '0', marginRight: '8px' }}
+              >
+                Order
+              </Button>,
+              <Button
+                type="default"
+                onClick={() => handleAddToWishlist(product)}
+                style={{ width: '80%', margin: '0' }}
+              >
+                <FaRegHeart /> Wishlist
+              </Button>,
+            ]}
+            style={{
+              height: '100%',
+              padding: '16px',
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Card.Meta
+              title={product.name}
+              description={`${product.description.substring(0, 120)}...`}
+            />
+            <p
+              className="product-price"
+              style={{ fontSize: '18px', fontWeight: 'bold', marginTop: '8px' }}
+            >
+              ${product.price}
+            </p>
+          </Card>
+        </div>
+      ))}
+    </div>
+  </Spin>
+</div>
+
   );
 
   const renderCart = () => (

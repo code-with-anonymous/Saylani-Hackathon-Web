@@ -97,8 +97,8 @@ const SingleProduct = () => {
                 <img
                   src={singleProduct.image}
                   alt={singleProduct.title || "Product Image"}
-                  className="img-fluid rounded"
-                  style={{ width: "100%", height: "400px" }}
+                  className=" product-image  img-fluid rounded"
+                  style={{ width: "90%", maxHeight: "400px",objectFit: "cover"  }}
                 />
               </div>
             </div>
@@ -107,10 +107,10 @@ const SingleProduct = () => {
                 <nav>
                   <ol className="breadcrumb breadcrumb-black">   
                     <li className="breadcrumb-item">
-                      <Link to="/">Home</Link>
+                      <Link to="/" className="text-dark">Home</Link>
                     </li>
                     <li className="breadcrumb-item">
-                      <Link to="/shop">Shop</Link>
+                      <Link to="/shop" className="text-dark">Shop</Link>
                     </li>
                     <li className="breadcrumb-item">
                       {singleProduct.name} 
@@ -118,14 +118,14 @@ const SingleProduct = () => {
                     {singleProduct.brand} 
                   </ol>
                 </nav>
-                <h2 className="product_name">{singleProduct.name}</h2> 
+                <h1 className="product_name fw-bold">{singleProduct.name}</h1> 
                 <h4 className="product_price">${singleProduct.price}</h4>
                 <hr />
                 <p className="product_info">
                   {singleProduct.description || "No description available."}
                 </p>
                 <div className="addToCart d-flex justify-content-between align-items-center">
-                  <button className="btn btn-danger" onClick={() => handleAddToCart(singleProduct)}>
+                  <button className="btn btn-danger add-to-cart-btn" onClick={() => handleAddToCart(singleProduct)}>
                     Add To Cart
                   </button> 
                 </div>
@@ -133,12 +133,12 @@ const SingleProduct = () => {
             </div>
           </div>
           <hr />
-          <div className="comments_section mt-4 w-100">
-            <h3>Comments</h3>
+          <div className="comments_section mt-4 w-100 ms-3">
+            <h3 className="mb-2">Comments</h3>
             {currentUser ? (  
               <form onSubmit={handleCommentSubmit} className="mb-3">
               <div className="row">
-                <div className="col-12">
+                <div className="col-12 mb-2">
                 <textarea 
 
                   rows="3" 
@@ -151,7 +151,7 @@ const SingleProduct = () => {
                 />
                 </div>
               </div>
-                <button type="submit" className="btn btn-primary mt-2 my-0">Submit</button>
+                <button type="submit" className="btn btn-primary mt-2 my-0 btn-submit">Submit</button>
               </form>
             ) : (
               <p>
@@ -171,7 +171,7 @@ const SingleProduct = () => {
                     : "Invalid date";
 
                   return (
-                    <div key={comment.id} className="comment mb-3 p-3" style={{ border: "1px solid #ddd", borderRadius: "5px", backgroundColor: "#ffffff" }}>
+                    <div key={comment.id} className="comment mb-3 mt-1 p-3" style={{ border: "1px solid #ddd", borderRadius: "5px", backgroundColor: "#ffffff" }}>
                       <p style={{ margin: "0" }}>
                         <strong style={{ color: "#333" }}>{comment.userName}</strong> 
                         <small style={{ marginLeft: "10px", fontStyle: "italic", color: "#888" }}>

@@ -14,7 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Contact from './pages/Contact';
 import Header from './components/Header/Header';
-import Navbar from './components/Header/Navbar';
+// import Navbar from './components/Header/Navbar';
 import Cart from './pages/Cart';
 import { CartProvider } from './contexts/CartContext';
 import Order from './components/Orders/Order';
@@ -67,12 +67,12 @@ const AppContent = () => {
         location.pathname.startsWith('/earnings') || 
         location.pathname.startsWith('/my-orders') ? (
           <>
-            <Navbar />
+            {/* <Navbar /> */}
             <SellerHeader />
           </>
         ) : (
           <>
-            <Navbar />
+            {/* <Navbar /> */}
             <Header />
           </>
         )

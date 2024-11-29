@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+    .product-image {
+      width: 100%; /* Set image width to 300px */
+      height: 300px;
+      margin: 0 auto;
+      margin-left: 0.9rem; /* Center the image */
+    }
+  
+    .add-to-cart-btn {
+      width: 90%; /* Make button width 100% */
+      text-align: center; /* Center the button text */
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .btn-submit {
+      width: 90%; /* Make button width 100% */
+      text-align: center; /* Center the button text */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-left: 1rem;
+      margin-top: 10px;
+    }
+  }

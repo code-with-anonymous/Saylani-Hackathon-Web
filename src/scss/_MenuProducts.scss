@@ -1,0 +1,256 @@
+// .menu-container {
+//     text-align: center;
+//     padding: 2rem;
+  
+//     .product-card {
+//       position: relative;
+//       width: 100%;
+//       height: 300px; // Increase card height
+//       border: 1px solid #ddd;
+//       border-radius: 10px;
+//       overflow: hidden;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//       transition: transform 0.3s;
+      
+//       &:hover {
+//         transform: scale(1.05);
+//       }
+  
+//       img {
+//         width: 100%;
+//         height: 100%; // Adjust image to fill the card
+//         object-fit: cover;
+//         border-radius: 10px 10px 0 0;
+//       }
+  
+//       .product-info {
+//         position: absolute;
+//         bottom: 0;
+//         width: 100%;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         padding: 0.5rem 1rem;
+//         background: rgba(0, 0, 0, 0.7); // Dark overlay for better text visibility
+//         color: #fff;
+  
+//         .dish-name {
+//           font-size: 1.2rem;
+//           font-weight: bold;
+//           text-align: left;
+//         }
+  
+//         .dish-price {
+//           font-size: 1.2rem;
+//           font-weight: bold;
+//           text-align: right;
+//         }
+//       }
+  
+//       .button-overlay {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         display: none;
+//         flex-direction: column;
+//         gap: 0.5rem;
+  
+//         .add-to-cart, .buy-now {
+//           padding: 0.5rem 1rem;
+//           border: none;
+//           border-radius: 5px;
+//           background-color: #ff9900;
+//           color: #fff;
+//           font-weight: bold;
+//           cursor: pointer;
+//           transition: background-color 0.3s;
+          
+//           &:hover {
+//             background-color: #e68a00;
+//           }
+//         }
+//       }
+  
+//       &:hover .button-overlay {
+//         display: flex;
+//       }
+//     }
+//   }
+  
+
+// .menu-container {
+//     text-align: center;
+//     padding: 2rem;
+  
+//     .grid-container {
+//       display: grid;
+//       grid-template-columns: repeat(4, 1fr); // 4 columns for desktop
+//       gap: 1rem;
+  
+//       @media (max-width: 768px) {
+//         grid-template-columns: 1fr; // 1 column for mobile
+//       }
+//     }
+  
+//     .food-card {
+//       position: relative;
+//       border: 1px solid #ddd;
+//       border-radius: 10px;
+//       overflow: hidden;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//       transition: transform 0.3s;
+//       height: 310px;
+//       &:hover {
+//         transform: scale(1.05);
+//       }
+  
+//       .food-image {
+//         width: 100%;
+//         height: 250px; // Adjusted height for images
+//         object-fit: cover;
+//         border-radius: 10px 10px 0 0;
+//       }
+  
+//       .food-info {
+//         padding: 0.5rem;
+//         background: #fff;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+  
+//         .dish-name {
+//           font-size: 1rem;
+//           font-weight: bold;
+//           text-align: left;
+//         }
+  
+//         .dish-price {
+//           font-size: 1rem;
+//           color: #333;
+//           text-align: right;
+//         }
+//       }
+//     }
+  
+//     .view-more-button {
+//       margin-top: 2rem;
+//       padding: 0.5rem 2rem;
+//       border: none;
+//       border-radius: 5px;
+//       background-color: #ff9900;
+//       color: #fff;
+//       font-size: 1rem;
+//       font-weight: bold;
+//       cursor: pointer;
+//       transition: background-color 0.3s;
+  
+//       &:hover {
+//         background-color: #e68a00;
+//       }
+//     }
+//   }
+  
+
+
+.menu-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); // 4 columns for large screens
+      gap: 1rem;
+  
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr; // 1 column for mobile screens
+      }
+    }
+  
+    .food-card {
+      position: relative;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+  
+      .food-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+      }
+  
+      .hover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        backdrop-filter: blur(5px); // Applies a blur to the overlay
+  
+        .hover-button {
+          margin: 0.5rem 0;
+          padding: 0.5rem 1.5rem;
+          border: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.5s ease;
+  
+          &:first-child {
+            background-color: #e74c3c; // Red color for "Add to Cart"
+            color: #fff;
+          }
+  
+          &.buy-now {
+            background-color: #000; // Black color for "Buy Now"
+            color: #fff;
+          }
+  
+          &:hover {
+            background-color: #333;
+          }
+        }
+      }
+  
+      &:hover .hover-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+      .food-info {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+  
+        .dish-name {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+  
+        .dish-price {
+          font-size: 1rem;
+          color: #666;
+        }
+      }
+    }
+  }
+  

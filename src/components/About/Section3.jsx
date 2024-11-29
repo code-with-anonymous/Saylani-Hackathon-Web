@@ -1,11 +1,13 @@
 import React from "react";
+import about1 from "../../images/about-1.png";
+import about2 from "../../images/about-2.png";
 
 const Section3 = () => {
   return (
     <div
-      className="section3 text-center pt-3 pb-5"
+      className="section3 text-center pt-3 pb-5 mb-3"
       style={{
-        backgroundColor: "#F5F3F2", 
+        backgroundColor: "#F5F3F2",
       }}
     >
       <div className="mb-5 pt-5">
@@ -16,34 +18,34 @@ const Section3 = () => {
         </p>
       </div>
       <div className="row justify-content-center mt-4">
-        {/* Logo images with improved styling */}
-        <div className="col-md-2 col-6 mb-4">
+        {/* Logo images with responsive column sizes */}
+        <div className="col-lg-2 col-md-3 col-6 mb-4">
           <img
-            src="http://lenos.mbkip3ms9u-e92498n216kr.p.temp-site.link/wp-content/uploads/elementor/thumbs/Partner1-pma4njf7yeuau2jy2dq0ljouoyv9q5zyrjsjx07pug.png"
+            src={about1}
             alt="Company Logo 1"
             className="img-fluid" // Ensures responsive images
             style={{ maxWidth: "100%", height: "auto" }} // Maintain aspect ratio
           />
         </div>
-        <div className="col-md-2 col-6 mb-4">
+        <div className="col-lg-2 col-md-3 col-6 mb-4">
           <img
-            src="http://lenos.mbkip3ms9u-e92498n216kr.p.temp-site.link/wp-content/uploads/elementor/thumbs/Layer-11-pma4n4dsxxueh3wrl94qj9ycds4c38d6wrv1f3l42u.png"
+            src={about2}
             alt="Company Logo 2"
             className="img-fluid"
             style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
-        <div className="col-md-2 col-6 mb-4">
+        <div className="col-lg-2 col-md-3 col-6 mb-4">
           <img
-            src="http://lenos.mbkip3ms9u-e92498n216kr.p.temp-site.link/wp-content/uploads/elementor/thumbs/Partner1-pma4njf7yeuau2jy2dq0ljouoyv9q5zyrjsjx07pug.png"
+            src={about1}
             alt="Company Logo 3"
             className="img-fluid"
             style={{ maxWidth: "100%", height: "auto" }}
           />
         </div>
-        <div className="col-md-2 col-6 mb-4">
+        <div className="col-lg-2 col-md-3 col-6 mb-4">
           <img
-            src="http://lenos.mbkip3ms9u-e92498n216kr.p.temp-site.link/wp-content/uploads/elementor/thumbs/Layer-11-pma4n4dsxxueh3wrl94qj9ycds4c38d6wrv1f3l42u.png"
+            src={about2}
             alt="Company Logo 4"
             className="img-fluid"
             style={{ maxWidth: "100%", height: "auto" }}

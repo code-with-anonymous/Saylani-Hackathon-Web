@@ -47,7 +47,7 @@ const Cart = () => {
   };
 
   const updateQuantity = (id, newQuantity) => {
-    const updatedCart = cart.map(item => 
+    const updatedCart = cart.map(item =>
       item.id === id ? { ...item, quantity: newQuantity } : item
     );
     setCart(updatedCart);
@@ -86,7 +86,7 @@ const Cart = () => {
                     <div className="col-lg-7">
                       <h5 className="mb-3">
                         <Link to="/" className="text-body ">
-                          <FaLongArrowAltLeft className="me-2" />
+                          <FaLongArrowAltLeft className="me-2 fw-bold" />
                           Continue shopping
                         </Link>
                       </h5>
@@ -105,59 +105,61 @@ const Cart = () => {
 
                       {cart.length >= 1
                         ? cart.map((item, index) => (
-                            <div className="card mb-3" key={index}>
-                              <div className="card-body">
-                                <div className="d-flex justify-content-between p-3">
-                                  <div className="d-flex flex-row align-items-center">
-                                    <div>
-                                      <img
-                                        src={item.image} 
-                                        className="card-img-top"
-                                        style={{
-                                          height: "150px",
-                                          width: "200px",
-                                        }}
-                                        alt={item.name}
-                                      />
-                                    </div>
-                                    <div className="ms-3">
-                                      <h5>{item.name}</h5>
-                                      <p className="small mb-0">
-                                        {item.description && typeof item.description === 'string'
-                                          ? item.description.substring(0, 50)
-                                          : "No description available"}
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div className="d-flex flex-row align-items-center">
-                                    <div style={{ width: "50px" }}>
-                                      <input
-                                        type="text"
-                                        value={item.quantity || 1}
-                                        min="1"
-                                        onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
-                                        className="form-control"
-                                      />
-                                    </div>
-                                    <div style={{ width: "80px" }}>
-                                      <h5 className="mb-0">${item.price}</h5>
-                                    </div>
-                                    <div style={{ width: "80px", marginRight: "20px" }}>
-                                      <button
-                                        className="btn btn-danger"
-                                        onClick={() => removeCartItem(item.id)}
-                                      >
-                                        Remove
-                                      </button>
-                                    </div>
-                                  </div>
+                          <div className="card mb-3" key={index}>
+                          <div className="card-body">
+                            <div className="d-flex flex-column flex-md-row justify-content-between p-3">
+                              <div className="d-flex flex-column flex-md-row align-items-center">
+                                <div>
+                                  <img
+                                    src={item.image}
+                                    className="card-img-top"
+                                    style={{
+                                      height: "150px",
+                                      Width: "250px",
+                                      objectFit: "cover",
+                                    }}
+                                    alt={item.name}
+                                  />
+                                </div>
+                                <div className="ms-3">
+                                  <h5 className="mt-3">{item.name}</h5>
+                                  <p className="small mb-0">
+                                    {item.description && typeof item.description === 'string'
+                                      ? item.description.substring(0, 50)
+                                      : "No description available"}
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="d-flex flex-column flex-md-row align-items-center mt-3 mt-md-0">
+                                <div style={{ width: "80px", maxWidth: "150px" }}>
+                                  <input
+                                    type="text"
+                                    value={item.quantity || 1}
+                                    min="1"
+                                    onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                                    className="form-control mx-1 text-center"
+                                  />
+                                </div>
+                                <div style={{ width: "100%", maxWidth: "120px" }} className="mt-2 mt-md-0">
+                                  <h5 className="mb-0 ms-2 text-center mt-2 ">${item.price}</h5>
+                                </div>
+                                <div className="mt-2 mt-md-0" style={{ width: "100%", maxWidth: "120px", marginRight: "20px" }}>
+                                  <button
+                                    className="btn btn-danger btn-sm w-100 ms-1"
+                                    onClick={() => removeCartItem(item.id)}
+                                  >
+                                    Remove
+                                  </button>
                                 </div>
                               </div>
                             </div>
-                          ))
+                          </div>
+                        </div>
+                        
+                        ))
                         : null}
                     </div>
-                    
+
                     <div className="col p-5">
                       <h3 className="fw-bold mb-5 mt-2 pt-1">Summary</h3>
                       <hr className="my-4" />
@@ -182,7 +184,7 @@ const Cart = () => {
 
                       <button
                         type="button"
-                        className="btn btn-dark btn-block btn-lg" 
+                        className="btn btn-dark btn-block btn-lg"
                         onClick={handleOrderModalOpen}
                       >
                         Checkout
@@ -226,13 +228,13 @@ const Cart = () => {
           <div>
             {orderDetails.cartItems.map((item, index) => (
               <div key={index} className="order-item">
-                <img alt={item.name} src={item.image} width={50} height={50} style={{marginRight: "20px"}}/> 
+                <img alt={item.name} src={item.image} width={50} height={50} style={{ marginRight: "20px" }} />
                 <span>{item.name} - {item.quantity} x ${(Number(item.price) || 0).toFixed(2)}</span>
 
               </div>
             ))}
             <h5>
-                <b>Total: ${orderDetails.total.toFixed(2)}</b>
+              <b>Total: ${orderDetails.total.toFixed(2)}</b>
             </h5>
           </div>
         </Modal>

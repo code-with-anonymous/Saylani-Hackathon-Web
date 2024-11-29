@@ -32,8 +32,8 @@ const Wishlist = () => {
   return (
     <main className='text-center mt-4'>
       <Container>
-        <Link to="/shop" className="text-body">
-          <FaLongArrowAltLeft className="me-2" />
+        <Link to="/shop" className="text-body  fw-bold fs-4 col-lg-12 text center mb-3">
+          <FaLongArrowAltLeft className="me-2  fw-bold " />
           Continue shopping
         </Link>
         <hr />
@@ -41,38 +41,51 @@ const Wishlist = () => {
           <Row>
             {wishlist.map((item, index) => (
               <Col md={6} key={index} className="mb-3">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="d-flex justify-content-between">
-                      <div className="d-flex flex-row align-items-center">
-                        <div>
-                          <img
-                            src={item.image}
-                            className="card-img-top"
-                            style={{
-                              height: "150px",
-                              width: "200px",
-                            }}
-                            alt={item.name}
-                          />
-                        </div>
-                        <div className="ms-3">
-                          <h5>{item.name}</h5>
-                          <p className="small mb-0">
-                            {item.description && typeof item.description === 'string'
-                              ? item.description.substring(0, 120)
-                              : "No description available"}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="text-end">
-                        <a className="text-muted" style={{ cursor: "pointer" }} onClick={() => removeWishlistItem(item.id)}>
-                          <i className="fas fa-times"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div className="card mx-2">
+                <div className="card mx-2">
+  <div className="card-body position-relative">
+    <div className="d-flex flex-column flex-md-row justify-content-between">
+      {/* Image Section */}
+      <div className="d-flex justify-content-center mb-3 mb-md-0">
+        <img
+          src={item.image}
+          className="card-img-top"
+          style={{
+            height: "150px",
+            width: "200px",
+            objectFit: "cover",
+          }}
+          alt={item.name}
+        />
+      </div>
+      {/* Content Section (Name and Description) */}
+      <div className="ms-3 d-flex flex-column justify-content-between">
+        <h5>{item.name}</h5>
+        <p className="small mb-0">
+          {item.description && typeof item.description === 'string'
+            ? item.description.substring(0, 120) + '...' // Add ellipsis for longer descriptions
+            : "No description available"}
+        </p>
+      </div>
+      {/* Close Button */}
+      <div className="text-end position-absolute top-0 end-0 p-2 d-none d-md-block">
+        <a className="text-muted" style={{ cursor: "pointer" }} onClick={() => removeWishlistItem(item.id)}>
+          <i className="fas fa-times"></i>
+        </a>
+      </div>
+    </div>
+
+    {/* Close Button for Small Screens */}
+    <div className="d-md-none position-absolute top-0 end-0 p-2">
+      <a className="text-muted" style={{ cursor: "pointer" }} onClick={() => removeWishlistItem(item.id)}>
+        <i className="fas fa-times"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
               </Col>
             ))}
           </Row>
